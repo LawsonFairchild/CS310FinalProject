@@ -1,3 +1,3 @@
 #! /usr/bin/env bash
 
-ansible-playbook $@
+ansible-playbook --ask-become-pass playbooks/pullDockerImages.yml

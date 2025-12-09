@@ -1,0 +1,15 @@
+- name: Pull multiple Docker images
+  hosts: localhost
+  become: yes
+  tasks:
+    - name: Pull specified Docker image
+      community.docker.docker_image:
+        name: "{{ item.name }}"
+        tag: "{{ item.tag }}"
+        state: present
+        source: pull
+      loop:
+        - name: webkul/bagisto
+          tag: "2.3.6"
+        - name: grafana/grafana
+          tag: "latest"

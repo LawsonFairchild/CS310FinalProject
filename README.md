@@ -1,16 +1,16 @@
-# CS 310: Final Project
+# CS310: Final Project
 
 ## Summary
-- What this project does
+- Installs the following docker images on the specified machine (currently loca>
 
 ## Usage
-- How to run the project
+- Change the hosts to a list of the IP addresses to manage
+- Run the following command: ./run.sh
 
 ## Resources
-- Document used
-- How to find the documentation for this project.
+- For more information on bagisto: https://devdocs.bagisto.com/
+- For more information on grafana: https://grafana.com/docs/
+- For more information on Docker: https://app.docker.com/
+- For advice on basically anything ever: https://www.biblegateway.com/
+- For more information on the project: go to cs310-final-project/docs/
 
----
-
-Your report files should be formatted as:
-- `Report_<YourFirstName>-<YourLastName>.<ext>`
