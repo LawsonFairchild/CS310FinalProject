@@ -1,0 +1,29 @@
+# ../docs/creatDevAccount.md
+- name: Create two developer accounts with limited functionality
+  hosts: localhost
+  become: true
+  tasks:
+    - name: Add user Paul of Tarsus
+      ansible.builtin.user:
+        name: theartistformerlyknownassaul
+        comment: This guy went to prison a couple times. Don't give him root ac>
+        uid: 1041
+        group: users
+        append: no
+        shell: /bin/bash
+        create_home: yes
+        password: $6$.rV26oo.lqEmDmfO$rllNaLQiS/o6cX7RJuzSK./FiswbIYmxJl.fGZFKlRBceBMBw16s6q4puRJ9CO41LM2b09vPeRNo3ZUbvCBtV0
+        state: present
+        generate_ssh_key: yes
+    - name: Add user Judas
+      ansible.builtin.user:
+        name: judas
+        comment: This guy seems trustworthy
+        uid: 1042
+        group: users
+        append: yes
+        shell: /bin/bash
+        create_home: yes
+        password: $6$.0ZK.11RUpXETsQl$g6txlYjEbJHTvgiVSIClFy4hQMU0/b5xHsPX5sZr4JMjW2SBEx36bGpxMzfxw9BN6a7lFmW9xQnXOHENgW72M1
+        state: present
+        generate_ssh_key: yes

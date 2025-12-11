@@ -1,0 +1,13 @@
+# docs createAdminAccount.md
+- name: Configure SSH
+  hosts: localhost
+  become: yes
+  tasks:
+    - name: add admin account
+      ansible.builtin.user:
+        name: Admin
+        uid: 1040
+        group: sudo
+        shell: /bin/bash
+        password: "$6$6hDpr6Rmp4hcPVv9$DH7jZ14FgIK6Oe5vSYQLKFIhUtqOFLTT8LLLUEO9JMQLJqXrsOWnUgfIZzfWgZSfTrr.LNxvoOKO29OnUitr/1"
+        create_home: yes

@@ -5,6 +5,8 @@
 - Configures and starts the following docker images: grafana, webkul
 - Installs OpenSSH
 - Configures and starts OpenSSH
+- Creates 2 developer accounts with no privileges
+- Creates 1 adminisrator account with root privilages
 
 ## Usage
 - Change the hosts to a list of the IP addresses to manage

@@ -9,3 +9,8 @@ ansible-playbook --ask-become-pass playbooks/startDockerImages.yml
 # Set up ssh for the machine and run
 ansible-playbook --ask-become-pass playbooks/setUpSSH.yml
 
+# Create two developer users
+ansible-playbook --ask-become-pass playbooks/createDevAccounts.yml
+
+# Create one Admin user
+ansible-playbook --ask-become-pass playbooks/createAdminAccounts.yml
