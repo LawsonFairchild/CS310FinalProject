@@ -1,0 +1,30 @@
+  GNU nano 8.4                                                                             setUpSSH.yml                                                                                       
+- name: Configure SSH
+  hosts: localhost
+  become: yes
+
+  vars:
+    ssh_port: 22
+    permit_root_login: "yes"
+    password_auth: "yes"
+
+  tasks:
+    - name: Install OpenSSH
+      package:
+        name: openssh-server
+        state: present
+
+    - name: Deploy sshd_config
+      template:
+        src: sshd_config.j2
+        dest: /etc/ssh/sshd_config
+        owner: root
+        group: root
+        mode: 0600
+      notify: Restart SSH
+
+  handlers:
+    - name: Restart SSH
+      service:
+        name: ssh
+        state: restarted

@@ -1,0 +1,21 @@
+- name: Deploy multiple Docker containers
+  hosts: localhost
+  become: yes
+  tasks:
+    - name: Run Grafana
+      community.docker.docker_container:
+        name: grafana
+        image: grafana/grafana:latest
+        ports:
+          - "3000:3000"
+        volumes:
+          - grafana-data:/var/lib/grafana
+        state: started
+
+    - name: Run webkul/bagisto
+      community.docker.docker_container:
+        name: webkul-bagisto
+        image: webkul/bagisto:2.3.6
+        ports:
+          - "4000:4000" #bound to arbitrary port because port 80 is taken by the caddy web server
+        state: started

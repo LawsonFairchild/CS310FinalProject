@@ -1,7 +1,6 @@
-  GNU nano 8.4                   pullDockerImage.md                             
 # pullDockerImages
 
-This contains the docker images to pull from docker hub.
+This contains the script to set up the following docker images to pull from docker hub: grafana, bagisto
 
 ## Tasks
 

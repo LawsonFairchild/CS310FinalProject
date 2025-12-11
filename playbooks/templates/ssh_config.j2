@@ -1,0 +1,11 @@
+Port {{ ssh_port }}
+PermitRootLogin {{ permit_root_login }}
+PasswordAuthentication {{ password_auth }}
+
+# Recommended defaults
+Protocol 2
+UseDNS no
+X11Forwarding no
+AllowTcpForwarding yes
+AcceptEnv LANG LC_*
+Subsystem sftp /usr/lib/openssh/sftp-server
